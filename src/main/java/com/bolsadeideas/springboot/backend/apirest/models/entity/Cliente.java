@@ -21,6 +21,14 @@ public class Cliente implements Serializable {
     private Date createAt;
 
     /**
+     * Asigna un valor a createAt justo antes de persistir el objeto.
+     */
+    @PrePersist
+    public void prePersist(){
+        createAt = new Date();
+    }
+
+    /**
      * Obtiene el identificador de cliente
      *
      * @return el identificador de cliente
